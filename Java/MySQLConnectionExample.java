@@ -1,5 +1,3 @@
-package JDBC;
-
 import java.sql.*;
 
 public class MySQLConnectionExample {
@@ -16,8 +14,8 @@ public class MySQLConnectionExample {
             
             String insertQuery = "INSERT INTO users (name, rollno) VALUES (?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
-                preparedStatement.setString(1, "Pratham");
-                preparedStatement.setString(2, "C044");
+                preparedStatement.setString(1, "Hariom");
+                preparedStatement.setString(2, "C029");
                 preparedStatement.executeUpdate();
                 System.out.println("Data inserted successfully!");
             }
