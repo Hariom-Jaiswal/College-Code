@@ -5,6 +5,7 @@ import javax.swing.*;
 
 public class Section implements ActionListener{
     JFrame frame = new JFrame();
+    SQL c = new SQL();
 
     public void init() {
         frame.setVisible(true);
@@ -52,12 +53,19 @@ public class Section implements ActionListener{
 
         if (name.equals("Add Books")) {
             System.out.println("Books Added");
+            c.connect();
+            c.addBooks();
+            c.close();
         }
         else if (name.equals("View Books")) {
             System.out.println("Viewed");
+            c.connect();
+            c.view();
+            c.close();
         }
         else if (name.equals("Issue Book")) {
             System.out.println("Issued");
+
         }
         else if (name.equals("View Issued Books")) {
             System.out.println("Viewed");

@@ -1,10 +1,10 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 
 public class AdminSection implements ActionListener{
     JFrame frame = new JFrame();
+    SQL c = new SQL();
 
     public void init() {
         frame.setVisible(true);
@@ -35,6 +35,7 @@ public class AdminSection implements ActionListener{
         frame.add(Delete);
         frame.add(Logout);
         frame.add(heading);
+
     }
 
     public void actionPerformed (ActionEvent e){
@@ -42,12 +43,21 @@ public class AdminSection implements ActionListener{
 
         if (name.equals("Add Librarian")) {
             System.out.println("Added");
+            c.connect();
+            c.add();
+            c.close();
         }
         else if (name.equals("View Librarian")) {
             System.out.println("Viewed");
+            c.connect();
+            c.view();
+            c.close();
         }
         else if (name.equals("Delete Librarian")) {
             System.out.println("Deleted");
+            c.connect();
+            c.delete();
+            c.close();
         }
         else if (name.equals("Logout")) {
             LoginPage l = new LoginPage();
@@ -55,4 +65,5 @@ public class AdminSection implements ActionListener{
             l.init();
         }
     }
+
 }
