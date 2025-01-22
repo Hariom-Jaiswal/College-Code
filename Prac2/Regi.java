@@ -1,10 +1,11 @@
+package Prac2;
 import javax.swing.*;
 
 public class Regi {
     
-    JFrame frame = new JFrame("User Registration Form");
-    
     public void init(){
+
+        JFrame frame = new JFrame("User Registration Form");
         frame.setVisible(true);
         frame.setLayout(null);
         frame.setSize(800, 800);
@@ -84,25 +85,6 @@ public class Regi {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
-    public void progressBar(){
-        JProgressBar jb;    
-        int i=0;     
-            
-        jb=new JProgressBar(0,2000);    
-        jb.setBounds(200, 400, 400, 60);         
-        jb.setValue(0);    
-        jb.setStringPainted(true);    
-        frame.add(jb);
-
-        while(i<=2000){    
-            jb.setValue(i);    
-            i=i+20;    
-            try{Thread.sleep(150);}catch(Exception e){}    
-        }    
-    }
-
-     
 
     public static void main(String[] args) {
         Regi call = new Regi();

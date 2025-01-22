@@ -40,12 +40,9 @@ public class LoginPage implements ActionListener {
             sec.init();
         }
     }
-
     public static void main(String[] args) {
         LoginPage v = new LoginPage();
         v.init();
     }
 
 }
-
-

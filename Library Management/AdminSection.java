@@ -42,19 +42,16 @@ public class AdminSection implements ActionListener{
         String name = e.getActionCommand();
 
         if (name.equals("Add Librarian")) {
-            System.out.println("Added");
             c.connect();
             c.add();
             c.close();
         }
         else if (name.equals("View Librarian")) {
-            System.out.println("Viewed");
             c.connect();
             c.view();
             c.close();
         }
         else if (name.equals("Delete Librarian")) {
-            System.out.println("Deleted");
             c.connect();
             c.delete();
             c.close();

@@ -52,26 +52,29 @@ public class Section implements ActionListener{
         String name = e.getActionCommand();
 
         if (name.equals("Add Books")) {
-            System.out.println("Books Added");
             c.connect();
             c.addBooks();
             c.close();
         }
         else if (name.equals("View Books")) {
-            System.out.println("Viewed");
             c.connect();
-            c.view();
+            c.viewBooks();
             c.close();
         }
         else if (name.equals("Issue Book")) {
-            System.out.println("Issued");
-
+            c.connect();
+            c.issueBooks();
+            c.close();
         }
         else if (name.equals("View Issued Books")) {
-            System.out.println("Viewed");
+            c.connect();
+            c.viewIssued();
+            c.close();
         }
         else if (name.equals("Return Book")) {
-            System.out.println("returned");
+            c.connect();
+            c.returnBooks();
+            c.close();
         }
         else if (name.equals("Logout")) {
             LoginPage l = new LoginPage();

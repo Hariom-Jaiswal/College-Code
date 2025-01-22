@@ -4,6 +4,7 @@ public class SQL {
 
     private Connection con = null; 
     private Statement st;
+    private ResultSet rs;
     String Query;
 
     public void connect(){
@@ -20,9 +21,10 @@ public class SQL {
     }
 
     public void add(){
-        Query = "INSERT INTO admin (Librarian) VALUES (\"Hari\")";
+        Query = "INSERT INTO admin (Librarian) VALUES (\"Anshika\")";
         try {
             st.executeUpdate(Query);
+            System.out.println("Added");
         } catch (SQLException e) {
             System.out.println("Error While Adding");
         }
@@ -31,63 +33,90 @@ public class SQL {
     public void view(){
         Query = "SELECT * FROM admin";
         try {
-            st.executeQuery(Query);
+            rs = st.executeQuery(Query);
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("Librarian");
+
+                System.out.println("ID: " + id + " Name: " + name );
+            }
         } catch (SQLException e) {
             System.out.println("Error While Viewing");
         }
     }
 
     public void delete(){
-        Query = "DELETE FROM admin WHERE Librarian=\"Hari\"";
+        Query = "DELETE FROM admin WHERE Librarian=\"Anshika\"";
         try {
             st.executeUpdate(Query);
+            System.out.println("Deleted");
         } catch (SQLException e) {
             System.out.println("Error While Deleting");
         }
     }
 
     public void addBooks(){
-        Query = "";
+        Query = "INSERT INTO Librarian (Books, Status) VALUES (\"Harry Potter\", \"Available\")";
         try {
             st.executeUpdate(Query);
+            System.out.println("Books Added");
         } catch (SQLException e) {
-            System.out.println("Error While Deleting");
+            System.out.println("Error While Adding");
         }
     }
 
     public void viewBooks(){
-        Query = "";
+        Query = "SELECT * FROM Librarian";
         try {
-            st.executeUpdate(Query);
+            rs = st.executeQuery(Query);
+
+            while (rs.next()) {
+                int id = rs.getInt("ID");
+                String books = rs.getString("Books");
+                String status = rs.getString("Status");
+
+                System.out.println("ID: " + id + " Books: " + books + " Status: " + status);
+            }
         } catch (SQLException e) {
-            System.out.println("Error While Deleting");
+            System.out.println("Error While Viewing");
         }
     }
 
     public void issueBooks(){
-        Query = "";
+        Query = "Update Librarian Set Status = \"Issued\" where books = \"harry Potter\" ";
         try {
             st.executeUpdate(Query);
+            System.out.println("Issued");
         } catch (SQLException e) {
-            System.out.println("Error While Deleting");
+            System.out.println("Error While Issuing");
         }
     }
 
     public void viewIssued(){
-        Query = "";
+        Query = "SELECT * FROM Librarian where Status=\"Issued\" ";
         try {
-            st.executeUpdate(Query);
+            rs = st.executeQuery(Query);
+
+            while (rs.next()) {
+                int id = rs.getInt("ID");
+                String books = rs.getString("Books");
+                String status = rs.getString("Status");
+
+                System.out.println("ID: " + id + " Books: " + books + " Status: " + status);
+            }
         } catch (SQLException e) {
-            System.out.println("Error While Deleting");
+            System.out.println("Error While Viewing");
         }
     }
 
     public void returnBooks(){
-        Query = "";
+        Query = "Update Librarian Set Status = \"Returned\" where books = \"harry Potter\" ";
         try {
             st.executeUpdate(Query);
+            System.out.println("returned");
         } catch (SQLException e) {
-            System.out.println("Error While Deleting");
+            System.out.println("Error While Returning");
         }
     }
 
