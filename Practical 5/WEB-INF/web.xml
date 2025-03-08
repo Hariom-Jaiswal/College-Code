@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <!-- Servlet for Lifecycle Demonstration -->
+    <servlet>
+        <servlet-name>LifecycleServlet</servlet-name>
+        <servlet-class>LifecycleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LifecycleServlet</servlet-name>
+        <url-pattern>/LifecycleServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet for Calculator -->
+    <servlet>
+        <servlet-name>CalculatorServlet</servlet-name>
+        <servlet-class>CalculatorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CalculatorServlet</servlet-name>
+        <url-pattern>/CalculatorServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Login Servlet -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Welcome Servlet -->
+    <servlet>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <servlet-class>WelcomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <url-pattern>/WelcomeServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet for Date and Session -->
+    <servlet>
+        <servlet-name>SessionDateServlet</servlet-name>
+        <servlet-class>SessionDateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionDateServlet</servlet-name>
+        <url-pattern>/SessionDateServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet for Welcome Message Based on Session -->
+    <servlet>
+        <servlet-name>SessionWelcomeServlet</servlet-name>
+        <servlet-class>SessionWelcomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionWelcomeServlet</servlet-name>
+        <url-pattern>/SessionWelcomeServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet for Cookie Tracking -->
+    <servlet>
+        <servlet-name>CookieTrackingServlet</servlet-name>
+        <servlet-class>CookieTrackingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CookieTrackingServlet</servlet-name>
+        <url-pattern>/CookieTrackingServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet for ServletConfig vs ServletContext -->
+    <servlet>
+        <servlet-name>ConfigContextServlet</servlet-name>
+        <servlet-class>ConfigContextServlet</servlet-class>
+        <init-param>
+            <param-name>configParam</param-name>
+            <param-value>Config Value Here</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConfigContextServlet</servlet-name>
+        <url-pattern>/ConfigContextServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Global Context Parameters -->
+    <context-param>
+        <param-name>globalParam</param-name>
+        <param-value>Global Context Value Here</param-value>
+    </context-param>
+
+    <!-- Welcome Page -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+</web-app>
